@@ -1,0 +1,30 @@
+{
+  "builders": [
+    {
+      "type": "virtualbox-ovf",
+      "boot_command": [
+        "vagrant<enter>",
+        "vagrant<enter>"
+      ],
+      "source_path": "envimation/box.ovf",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "headless": true,
+      "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "./provision.sh",
+      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'"
+    }
+  ],
+  "post-processors": [
+    {
+      "output": "multidev.box",
+      "type": "vagrant"
+    }
+  ]
+}
