@@ -2,3 +2,5 @@
 *.box
 *.ovf
 *.vmdk
+envimation/Vagrantfile
+envimation/*.json
