@@ -32,4 +32,5 @@ environments.
   * ansible
   * nginx
   * runit
+  * yarn
   * some basics for building packages

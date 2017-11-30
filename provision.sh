@@ -30,6 +30,7 @@ apt-get update
 #   * ansible
 #   * nginx
 #   * runit
+#   * yarn
 #   * some basics for building packages
 apt-get install -y git bash-completion make build-essential libssl-dev \
   zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget llvm \
