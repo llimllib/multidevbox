@@ -29,7 +29,7 @@ environments.
   * java 8
 
 * Also:
- * ansible
- * nginx
- * runit
- * some basics for building packages
+  * ansible
+  * nginx
+  * runit
+  * some basics for building packages
