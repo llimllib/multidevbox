@@ -8,7 +8,6 @@ apt-get install -y software-properties-common curl
 add-apt-repository ppa:ansible/ansible
 add-apt-repository ppa:brightbox/ruby-ng
 add-apt-repository ppa:gophers/archive
-add-apt-repository ppa:jonathonf/python-3.6
 add-apt-repository ppa:nginx/stable
 add-apt-repository ppa:ondrej/php
 curl -sL https://deb.nodesource.com/setup_9.x | bash -
@@ -40,9 +39,8 @@ apt-get install -y git bash-completion make build-essential libssl-dev \
   openjdk-8-jdk \
   nodejs yarn \
   nginx \
-  php7.2 \
-  python3.6 python-pip python3-pip \
-  ruby2.4 \
+  php7.2 php7.2-mbstring \
+  ruby2.5 \
   runit
 
 gem install bundler
@@ -52,6 +50,9 @@ mkdir -p ~/go
 ln -sf /usr/lib/go-1.9/bin/gofmt /usr/bin/
 ln -sf /usr/lib/go-1.9/bin/go /usr/bin/
 
-# xenial depends on /usr/bin/python3.5 being symlinked to python3.5, so don't
-# change /usr/bin
-ln -sf /usr/bin/python3.6 /usr/local/bin/python3
+# Use pyenv to install python 3.6.4. The apt-based solutions I tried really stunk.
+curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+echo 'export PATH="/home/vagrant/.pyenv/bin:$PATH"' >> ~/.bash_profile
+echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
+echo 'source ~/.bashrc"' >> ~/.bash_profile
