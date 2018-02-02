@@ -36,7 +36,7 @@ apt-get install -y git bash-completion make build-essential libssl-dev \
   libncurses5-dev libncursesw5-dev xz-utils tk-dev unzip \
   ansible \
   golang-1.9-go \
-  openjdk-8-jdk \
+  openjdk-8-jdk maven \
   nodejs yarn \
   nginx \
   php7.2 php7.2-mbstring \
