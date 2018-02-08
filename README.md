@@ -4,7 +4,24 @@ I often find myself having to run random untrusted snippets of code, so this is
 a box that gathers together a bunch of reasonably up-to-date common development
 environments.
 
-## Prerequisites
+## How to use it
+
+* install [Vagrant](https://www.vagrantup.com/)
+* Create a file called `Vagrantfile` with these contents:
+
+```
+Vagrant.configure("2") do |config|
+  # https://github.com/llimllib/multidevbox
+  config.vm.box = "llimllib/multidev"
+end
+```
+
+* run `vagrant up`
+* run `vagrant ssh` to ssh into your newly created box. That's it!
+
+## Prerequisites for building the image
+
+You don't need to to do this just to use it! See above.
 
 * GNU make
 * wget
@@ -20,17 +37,21 @@ environments.
 ## What it's got:
 
 * Current dev environments for:
-  * python 2.7
-  * python 3.6
-  * ruby 2.4
+  * dotnet 2.1.4
   * golang 1.9
+  * java 8 (openjdk)
   * node 1.9
   * php 7.2
-  * java 8
+  * python 2.7.14
+  * python 3.6.4
+  * ruby 2.5
 
 * Also:
   * ansible
+  * bundler
+  * maven
   * nginx
+  * pyenv
   * runit
   * yarn
   * some basics for building packages
