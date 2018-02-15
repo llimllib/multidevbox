@@ -10,6 +10,7 @@ add-apt-repository ppa:brightbox/ruby-ng
 add-apt-repository ppa:gophers/archive
 add-apt-repository ppa:nginx/stable
 add-apt-repository ppa:ondrej/php
+add-apt-repository -y ppa:webupd8team/java
 curl -sL https://deb.nodesource.com/setup_9.x | bash -
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
@@ -23,10 +24,15 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsof
 
 apt-get update
 
+# Auto-accept the java license. Oracle sucks.
+# https://stackoverflow.com/a/19391042/42559
+echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
+
 # * Current dev environments for:
 #   * dotnet 2.1.4
 #   * golang 1.9
-#   * java 8 (openjdk)
+#   * java 9
 #   * node 1.9
 #   * php 7.2
 #   * python 2.7.14
@@ -48,7 +54,7 @@ apt-get install -y git bash-completion make build-essential libssl-dev \
   ansible \
   dotnet-sdk-2.1.4 \
   golang-1.9-go \
-  openjdk-8-jdk maven \
+  oracle-java9-installer oracle-java9-set-default maven \
   nodejs yarn \
   nginx \
   php7.2 php7.2-mbstring \
