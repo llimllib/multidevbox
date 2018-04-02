@@ -2,7 +2,7 @@ set -eux
 
 # get add-apt-repository and curl
 apt-get update
-apt-get install -y software-properties-common curl
+apt-get install -y software-properties-common curl less
 
 # add PL PPAs
 add-apt-repository ppa:ansible/ansible
