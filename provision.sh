@@ -32,7 +32,7 @@ echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selecti
 # * Current dev environments for:
 #   * dotnet 2.1.4
 #   * golang 1.9
-#   * java 9
+#   * java 10
 #   * node 1.9
 #   * php 7.2
 #   * python 2.7.14

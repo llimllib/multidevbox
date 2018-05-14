@@ -39,7 +39,7 @@ You don't need to to do this just to use it! See above.
 * Current dev environments for:
   * dotnet 2.1.4
   * golang 1.9
-  * java 8 (openjdk)
+  * java 10 (oracle)
   * node 1.9
   * php 7.2
   * python 2.7.14
