@@ -63,7 +63,5 @@ apt-get install -y git bash-completion make build-essential libssl-dev \
 
 gem install bundler
 
-# XXX: I use this as my GOPATH. Is there a better default to use?
-mkdir -p ~/go
 ln -sf /usr/lib/go-1.9/bin/gofmt /usr/bin/
 ln -sf /usr/lib/go-1.9/bin/go /usr/bin/
