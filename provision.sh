@@ -10,7 +10,7 @@ add-apt-repository ppa:brightbox/ruby-ng
 add-apt-repository ppa:gophers/archive
 add-apt-repository ppa:nginx/stable
 add-apt-repository ppa:ondrej/php
-add-apt-repository -y ppa:webupd8team/java
+add-apt-repository ppa:linuxuprising/java
 curl -sL https://deb.nodesource.com/setup_9.x | bash -
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
@@ -54,7 +54,7 @@ apt-get install -y git bash-completion make build-essential libssl-dev \
   ansible \
   dotnet-sdk-2.1.4 \
   golang-1.9-go \
-  oracle-java9-installer oracle-java9-set-default maven \
+  oracle-java10-installer oracle-java10-set-default maven \
   nodejs yarn \
   nginx \
   php7.2 php7.2-mbstring \
@@ -63,7 +63,5 @@ apt-get install -y git bash-completion make build-essential libssl-dev \
 
 gem install bundler
 
-# XXX: I use this as my GOPATH. Is there a better default to use?
-mkdir -p ~/go
 ln -sf /usr/lib/go-1.9/bin/gofmt /usr/bin/
 ln -sf /usr/lib/go-1.9/bin/go /usr/bin/
