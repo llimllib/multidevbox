@@ -55,3 +55,7 @@ You don't need to to do this just to use it! See above.
   * runit
   * yarn
   * some basics for building packages
+
+## Contributors
+
+* [@rdimartino](https://github.com/rdimartino)
