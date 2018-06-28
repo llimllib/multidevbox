@@ -45,14 +45,17 @@ You don't need to to do this just to use it! See above.
   * python 2.7.14
   * python 3.6.4
   * ruby 2.5
+  * rust (stable)
 
 * Also:
   * ansible
   * bundler
+  * cargo
   * maven
   * nginx
   * pyenv
   * runit
+  * rustup
   * yarn
   * some basics for building packages
 
