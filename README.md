@@ -37,20 +37,23 @@ You don't need to to do this just to use it! See above.
 ## What it's got:
 
 * Current dev environments for:
-  * dotnet 2.1.4
-  * golang 1.9
-  * java 10 (oracle)
+  * dotnet 2.1
+  * elixir 1.7.3
+  * erlang 21.0.5
+  * golang 1.11
+  * java 10
   * node 1.9
   * php 7.2
   * python 2.7.14
-  * python 3.6.4
+  * python 3.7.0
   * ruby 2.5
-  * rust (stable)
+  * rust 1.29.1
 
 * Also:
   * ansible
   * bundler
   * cargo
+  * leiningen
   * maven
   * nginx
   * pyenv
