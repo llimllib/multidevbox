@@ -18,5 +18,8 @@ echo 'source ~/.bashrc' >> ~/.bash_profile
 
 # now bring pyenv into the current shell session so we can install us some pythons
 source ~/.bash_profile
-pyenv install 3.6.4
+pyenv install 3.7.0
 pyenv install 2.7.14
+
+# Install rustup and cargo with defaults. `-y` to disable confirmation prompt
+curl https://sh.rustup.rs -sSf | sh -s -- -y
