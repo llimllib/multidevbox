@@ -2,7 +2,7 @@ set -eux
 
 # get add-apt-repository and curl
 apt-get update
-apt-get install -y software-properties-common curl less zip apt-transport-https
+apt-get install -y software-properties-common curl less zip apt-transport-https libffi-dev
 
 # add PL PPAs
 add-apt-repository ppa:ansible/ansible
@@ -31,16 +31,18 @@ echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selec
 echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
 
 # * Current dev environments for:
+#   * clojure
 #   * dotnet 2.1
 #   * elixir 1.7.3
 #   * erlang 21.0.5
-#   * golang 1.9
+#   * golang 1.11
 #   * java 10
 #   * node 1.9
 #   * php 7.2
 #   * python 2.7.14
-#   * python 3.6.4
+#   * python 3.7.0
 #   * ruby 2.5
+#   * rust 1.29.1
 #
 # * Also:
 #   * ansible
@@ -65,12 +67,12 @@ apt-get install -y git bash-completion make build-essential libssl-dev \
   ruby2.5 \
   runit
 
+# download and install go 1.11 to /usr/local/go
 curl -sS https://dl.google.com/go/go1.11.linux-amd64.tar.gz | tar -C /usr/local -xz
 
+# install leiningen for clojure
+curl -sSL https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein -o /usr/bin/lein && \
+    chmod a+x /usr/bin/lein && \
+    /usr/bin/lein
+
 gem install bundler
-
-ln -sf /usr/lib/go-1.11/bin/gofmt /usr/bin/
-ln -sf /usr/lib/go-1.11/bin/go /usr/bin/
-
-# Install rustup and cargo with defaults. `-y` to disable confirmation prompt
-curl https://sh.rustup.rs -sSf | sh -s -- -y
