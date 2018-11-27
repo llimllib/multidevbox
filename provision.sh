@@ -64,7 +64,7 @@ apt-get install -y git bash-completion make build-essential libssl-dev \
   nodejs yarn \
   nginx \
   php7.2 php7.2-mbstring \
-  ruby2.5 \
+  ruby2.5 ruby2.5-dev \
   runit
 
 # download and install go 1.11 to /usr/local/go
