@@ -65,6 +65,10 @@ apt-get install -y git bash-completion make build-essential libssl-dev \
   ruby2.6 ruby2.6-dev \
   runit
 
+# yarn is a special snowflake; we want to install it independent of debian's
+# node, so we have to do this. cf: https://yarnpkg.com/en/docs/install#debian-stable
+apt-get install -y --no-install-recommends yarn
+
 # download and install go 1.11 to /usr/local/go
 curl -sS https://dl.google.com/go/go1.11.linux-amd64.tar.gz | tar -C /usr/local -xz
 

@@ -32,5 +32,8 @@ pyenv install 3.7.2
 pyenv install 2.7.15
 nodenv install 11.6.0
 
+pyenv global 3.7.2
+nodenv global 11.6.0
+
 # Install rustup and cargo with defaults. `-y` to disable confirmation prompt
 curl https://sh.rustup.rs -sSf | sh -s -- -y
