@@ -10,7 +10,6 @@ add-apt-repository ppa:brightbox/ruby-ng
 add-apt-repository ppa:nginx/stable
 add-apt-repository ppa:ondrej/php
 add-apt-repository ppa:linuxuprising/java
-curl -sL https://deb.nodesource.com/setup_9.x | bash -
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
@@ -27,22 +26,22 @@ apt-get update
 
 # Auto-accept the java license. Oracle sucks.
 # https://stackoverflow.com/a/19391042/42559
-echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
-echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-2 select true | debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-2 seen true | debconf-set-selections
 
 # * Current dev environments for:
 #   * clojure
-#   * dotnet 2.1
+#   * dotnet 2.2
 #   * elixir 1.7.3
 #   * erlang 21.0.5
 #   * golang 1.11
-#   * java 10
-#   * node 1.9
+#   * java 11
+#   * node 11.6.0
 #   * php 7.2
-#   * python 2.7.14
-#   * python 3.7.0
-#   * ruby 2.5
-#   * rust 1.29.1
+#   * python 2.7.15
+#   * python 3.7.2
+#   * ruby 2.6
+#   * rust 1.32.0
 #
 # * Also:
 #   * ansible
@@ -57,14 +56,13 @@ apt-get install -y git bash-completion make build-essential libssl-dev \
   zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget llvm \
   libncurses5-dev libncursesw5-dev xz-utils tk-dev unzip \
   ansible \
-  dotnet-sdk-2.1 \
+  dotnet-sdk-2.2 \
   elixir \
   esl-erlang \
-  oracle-java10-installer oracle-java10-set-default maven \
-  nodejs yarn \
+  oracle-java11-installer oracle-java11-set-default maven \
   nginx \
-  php7.2 php7.2-mbstring \
-  ruby2.5 ruby2.5-dev \
+  php7.3 php7.3-mbstring \
+  ruby2.6 ruby2.6-dev \
   runit
 
 # download and install go 1.11 to /usr/local/go
