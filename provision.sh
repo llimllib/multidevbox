@@ -6,7 +6,6 @@ apt-get install -y software-properties-common curl less zip apt-transport-https 
 
 # add PL PPAs
 add-apt-repository ppa:ansible/ansible
-add-apt-repository ppa:brightbox/ruby-ng
 add-apt-repository ppa:nginx/stable
 add-apt-repository ppa:ondrej/php
 add-apt-repository ppa:linuxuprising/java
@@ -34,13 +33,13 @@ echo debconf shared/accepted-oracle-license-v1-2 seen true | debconf-set-selecti
 #   * dotnet 2.2
 #   * elixir 1.7.3
 #   * erlang 21.0.5
-#   * golang 1.11
+#   * golang 1.12.1
 #   * java 11
-#   * node 11.6.0
+#   * node 11.13.0
 #   * php 7.2
-#   * python 2.7.15
-#   * python 3.7.2
-#   * ruby 2.6
+#   * python 2.7.16
+#   * python 3.7.3
+#   * ruby 2.6.2
 #   * rust 1.32.0
 #
 # * Also:
@@ -62,7 +61,6 @@ apt-get install -y git bash-completion make build-essential libssl-dev \
   oracle-java11-installer oracle-java11-set-default maven \
   nginx \
   php7.3 php7.3-mbstring \
-  ruby2.6 ruby2.6-dev \
   runit
 
 # yarn is a special snowflake; we want to install it independent of debian's
@@ -70,11 +68,9 @@ apt-get install -y git bash-completion make build-essential libssl-dev \
 apt-get install -y --no-install-recommends yarn
 
 # download and install go 1.11 to /usr/local/go
-curl -sS https://dl.google.com/go/go1.11.linux-amd64.tar.gz | tar -C /usr/local -xz
+curl -sS https://dl.google.com/go/go1.12.1.linux-amd64.tar.gz | tar -C /usr/local -xz
 
 # install leiningen for clojure
 curl -sSL https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein -o /usr/bin/lein && \
     chmod a+x /usr/bin/lein && \
     /usr/bin/lein
-
-gem install bundler

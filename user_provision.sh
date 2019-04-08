@@ -23,17 +23,32 @@ curl -fsSL https://github.com/nodenv/nodenv-installer/raw/master/bin/nodenv-inst
 echo 'export PATH="$HOME/.nodenv/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(nodenv init -)"' >> ~/.bash_profile
 
+# install rbenv and a current ruby
+# https://github.com/rbenv/rbenv-installer#rbenv-installer
+# rbenv-installer requires you to put these on the path before it runs
+# apparently too
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+
 # Once done installing the *envs, fix up the bash_profile and source it
 echo 'source ~/.bashrc' >> ~/.bash_profile
 source ~/.bash_profile
 
 # then finally install some versions
-pyenv install 3.7.2
-pyenv install 2.7.15
-nodenv install 11.6.0
+pyenv install 3.7.3
+pyenv install 2.7.16
+nodenv install 11.13.0
+rbenv install 2.6.2
 
-pyenv global 3.7.2
-nodenv global 11.6.0
+pyenv global 3.7.3
+nodenv global 11.13.0
+rbenv global 2.6.2
+
+# verify that ruby is installed properly and install bundler
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+gem install bundler
 
 # Install rustup and cargo with defaults. `-y` to disable confirmation prompt
 curl https://sh.rustup.rs -sSf | sh -s -- -y
