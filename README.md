@@ -37,17 +37,17 @@ You don't need to to do this just to use it! See above.
 ## What it's got:
 
 * Current dev environments for:
-  * dotnet 2.1
+  * dotnet 2.2
   * elixir 1.7.3
   * erlang 21.0.5
-  * golang 1.11
-  * java 10
-  * node 1.9
-  * php 7.2
-  * python 2.7.14
-  * python 3.7.0
-  * ruby 2.5
-  * rust 1.29.1
+  * golang 1.12.1
+  * java 11
+  * node 11.13.0
+  * php 7.3
+  * python 2.7.16
+  * python 3.7.3
+  * ruby 2.6.2
+  * rust 1.33.0
 
 * Also:
   * ansible
