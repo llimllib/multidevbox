@@ -47,7 +47,7 @@ You don't need to to do this just to use it! See above.
   * python 2.7.16
   * python 3.7.3
   * ruby 2.6.2
-  * rust 1.29.1
+  * rust 1.33.0
 
 * Also:
   * ansible

@@ -28,29 +28,6 @@ apt-get update
 echo debconf shared/accepted-oracle-license-v1-2 select true | debconf-set-selections
 echo debconf shared/accepted-oracle-license-v1-2 seen true | debconf-set-selections
 
-# * Current dev environments for:
-#   * clojure
-#   * dotnet 2.2
-#   * elixir 1.7.3
-#   * erlang 21.0.5
-#   * golang 1.12.1
-#   * java 11
-#   * node 11.13.0
-#   * php 7.2
-#   * python 2.7.16
-#   * python 3.7.3
-#   * ruby 2.6.2
-#   * rust 1.32.0
-#
-# * Also:
-#   * ansible
-#   * bundler
-#   * maven
-#   * nginx
-#   * pyenv
-#   * runit
-#   * yarn
-#   * some basics for building packages
 apt-get install -y git bash-completion make build-essential libssl-dev \
   zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget llvm \
   libncurses5-dev libncursesw5-dev xz-utils tk-dev unzip \
