@@ -40,7 +40,7 @@ source ~/.bash_profile
 pyenv install 3.7.4
 pyenv install 2.7.16
 nodenv install 12.7.0
-rbenv install 2.6.2
+rbenv install 2.6.3
 
 pyenv global 3.7.4
 nodenv global 12.7.0
@@ -53,7 +53,7 @@ gem install bundler
 # Install rustup and cargo with defaults. `-y` to disable confirmation prompt
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 
-# Install swift
+# Install swift to ~/swift
 mkdir ~/swift
 curl https://swift.org/builds/swift-5.0.2-release/ubuntu1604/swift-5.0.2-RELEASE/swift-5.0.2-RELEASE-ubuntu16.04.tar.gz | tar xzv -C ~/swift --strip-components 2
 echo 'export PATH=$PATH:$HOME/swift/bin' >> ~/.bash_profile
