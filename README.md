@@ -41,12 +41,12 @@ You don't need to to do this just to use it! See above.
   * elixir 1.7.3
   * erlang 21.0.5
   * golang 1.12.1
-  * java 11
-  * node 11.13.0
+  * java 12
+  * node 12.7.0
   * php 7.3
   * python 2.7.16
-  * python 3.7.3
-  * ruby 2.6.2
+  * python 3.7.4
+  * ruby 2.6.3
   * rust 1.33.0
 
 * Also:
