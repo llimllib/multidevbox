@@ -45,7 +45,7 @@ apt-get install -y git bash-completion make build-essential libssl-dev \
   elixir \
   esl-erlang \
   nginx \
-  oracle-java11-installer oracle-java11-set-default maven \
+  oracle-java12-installer oracle-java12-set-default maven \
   php7.3 php7.3-mbstring \
   ponyc \
   runit \
