@@ -41,11 +41,13 @@ You don't need to to do this just to use it! See above.
   * elixir 1.7.3
   * erlang 21.0.5
   * golang 1.12.1
-  * java 12
+  * java 11.0.2 (openjdk)
+  * java 12.0.2 (openjdk)
+  * java 13.0.1 (openjdk)
   * node 12.7.0
   * php 7.3
   * python 2.7.16
-  * python 3.7.4
+  * python 3.8.2
   * ruby 2.6.3
   * rust 1.33.0
 
@@ -53,9 +55,11 @@ You don't need to to do this just to use it! See above.
   * ansible
   * bundler
   * cargo
+  * jenv
   * leiningen
   * maven
   * nginx
+  * pipenv
   * pyenv
   * runit
   * rustup

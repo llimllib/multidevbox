@@ -4,6 +4,37 @@
 # virtualenv-init depends on using unset variables, so you cannot use -u
 set -ex
 
+# Install jenv for switching between versions.
+if [[ ! -e "$HOME/.jenv" ]]; then
+    git clone https://github.com/jenv/jenv.git ~/.jenv
+    mkdir "$HOME/.jenv/versions"
+    echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
+fi
+
+function download_java {
+    url="$1"
+    filename=$(basename "$url")
+    if [[ ! -e "$filename" ]]; then
+        curl -O "$url"
+        tar -xzf "$filename"
+    fi
+}
+
+download_java "https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_linux-x64_bin.tar.gz"
+download_java "https://download.java.net/java/GA/jdk12.0.2/e482c34c86bd4bf8b56c0b35558996b9/10/GPL/openjdk-12.0.2_linux-x64_bin.tar.gz"
+download_java "https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz"
+
+find . -wholename "**/bin/java" | \
+    while read -r java_bin; do
+        jdk_dir="${java_bin%*/bin/java}"
+        "$HOME/.jenv/bin/jenv" add "$jdk_dir"
+    done
+
+# install leiningen for clojure
+# curl -sSL https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein -o /usr/bin/lein && \
+#     chmod a+x /usr/bin/lein && \
+#     /usr/bin/lein
+
 # Create GOPATH and add GO root and ~/go/bin to the $PATH for ease of using `go get ...`
 mkdir -p ~/go
 echo 'export GOPATH="$HOME/go"' >> ~/.bash_profile
@@ -37,12 +68,13 @@ echo 'source ~/.bashrc' >> ~/.bash_profile
 source ~/.bash_profile
 
 # then finally install some versions
-pyenv install 3.7.4
+pyenv install 3.8.2
 pyenv install 2.7.16
 nodenv install 12.7.0
 rbenv install 2.6.3
 
-pyenv global 3.7.4
+pyenv global 3.8.2
+pip3 install --user pipenv
 nodenv global 12.7.0
 rbenv global 2.6.3
 
