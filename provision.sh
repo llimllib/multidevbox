@@ -60,4 +60,8 @@ apt-get install -y --no-install-recommends yarn
 # download and install go 1.11 to /usr/local/go
 curl -sS https://dl.google.com/go/go1.12.1.linux-amd64.tar.gz | tar -C /usr/local -xz
 
+# install leiningen for clojure
+curl -sSL https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein -o /usr/bin/lein
+chmod a+x /usr/bin/lein
+
 sudo apt-get -y install ponyc
