@@ -33,7 +33,7 @@ echo 'export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"' >> ~/.bash_profile
 # Use pyenv to install python 3.6.4. The apt-based solutions I tried really stunk.
 test -d ~/.pyenv && rm -rf ~/.pyenv
 curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
-echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bash_profile
+echo 'export PATH="$HOME/.pyenv/bin:$HOME/.local/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
 
