@@ -46,7 +46,6 @@ apt-get install -y git bash-completion make build-essential libssl-dev \
   esl-erlang \
   nginx \
   ponyc \
-  python3.8 \
   runit
 
 # Need to install php with --no-recommends to prevent apache2 from being installed
