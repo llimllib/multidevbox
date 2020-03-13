@@ -1,4 +1,4 @@
 .PHONY: download
 download:
-	wget https://app.vagrantup.com/envimation/boxes/ubuntu-xenial/versions/1.0.3-1505697275/providers/virtualbox.box
+	wget https://vagrantcloud.com/hashicorp/boxes/bionic64/versions/1.0.282/providers/virtualbox.box
 	tar -xzvf virtualbox.box 

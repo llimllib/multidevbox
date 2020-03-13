@@ -45,10 +45,12 @@ apt-get install -y git bash-completion make build-essential libssl-dev \
   elixir \
   esl-erlang \
   nginx \
-  oracle-java12-installer oracle-java12-set-default maven \
-  php7.3 php7.3-mbstring \
   ponyc \
-  runit \
+  runit
+
+# Need to install php with --no-recommends to prevent apache2 from being installed
+apt-get install --no-install-recommends -y php7.3 php7.3-mbstring
+
 
 # yarn is a special snowflake; we want to install it independent of debian's
 # node, so we have to do this. cf: https://yarnpkg.com/en/docs/install#debian-stable
@@ -58,8 +60,7 @@ apt-get install -y --no-install-recommends yarn
 curl -sS https://dl.google.com/go/go1.12.1.linux-amd64.tar.gz | tar -C /usr/local -xz
 
 # install leiningen for clojure
-curl -sSL https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein -o /usr/bin/lein && \
-    chmod a+x /usr/bin/lein && \
-    /usr/bin/lein
+curl -sSL https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein -o /usr/bin/lein
+chmod a+x /usr/bin/lein
 
 sudo apt-get -y install ponyc
