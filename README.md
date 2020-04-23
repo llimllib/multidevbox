@@ -37,19 +37,27 @@ You don't need to to do this just to use it! See above.
 ## What it's got:
 
 * Current dev environments for:
+  * ada (gcc-gnat) 4.9.3
+  * C
+      * clang
+      * gcc
+  * clojure
   * dotnet 2.2
-  * elixir 1.7.3
-  * erlang 21.0.5
-  * golang 1.12.1
+  * dotnet 3.1
+  * elixir 1.10.2
+  * erlang 22
+  * golang 1.14
   * java 11.0.2 (openjdk)
   * java 12.0.2 (openjdk)
   * java 13.0.1 (openjdk)
   * node 12.7.0
   * php 7.3
+  * pony 0.33
   * python 2.7.16
   * python 3.8.2
   * ruby 2.6.3
-  * rust 1.33.0
+  * rust 1.42.0
+  * swift 5.0.2
 
 * Also:
   * ansible
@@ -69,3 +77,4 @@ You don't need to to do this just to use it! See above.
 ## Contributors
 
 * [@rdimartino](https://github.com/rdimartino)
+* [@dvogel](https://github.com/dvogel)
