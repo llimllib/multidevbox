@@ -8,3 +8,5 @@ package: multidev.box
 
 multidev.box: provision.sh user_provision.sh packer.json
 	packer build packer.json
+	# clear out the box so vagrant up uses thte new one instead of its cached copy
+	vagrant box remove multidev.box
