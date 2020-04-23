@@ -16,7 +16,7 @@ function download_java {
     url="$1"
     filename=$(basename "$url")
     if [[ ! -e "$filename" ]]; then
-        curl -O "$url"
+        curl -OsSf "$url"
         tar -xzf "$filename"
     fi
 }
@@ -32,7 +32,7 @@ echo 'export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"' >> ~/.bash_profile
 
 # Use pyenv to install python 3.6.4. The apt-based solutions I tried really stunk.
 test -d ~/.pyenv && rm -rf ~/.pyenv
-curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+curl -fsSL https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 echo 'export PATH="$HOME/.pyenv/bin:$HOME/.local/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
@@ -55,6 +55,10 @@ test -d ~/.rbenv && rm -rf ~/.rbenv
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+
+# https://github.com/ponylang/ponyup#install-ponyup
+echo 'export PATH="$HOME/.local/share/ponyup/bin:$PATH"' >> ~/.bash_profile
+curl --proto '=https' --tlsv1.2 -qsSf https://raw.githubusercontent.com/ponylang/ponyup/latest-release/ponyup-init.sh | sh 2> /dev/null
 
 # Once done installing the *envs, fix up the bash_profile and source it
 echo 'source ~/.bashrc' >> ~/.bash_profile
@@ -90,5 +94,8 @@ curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 # Install swift to ~/swift
 mkdir ~/swift
-curl https://swift.org/builds/swift-5.0.2-release/ubuntu1604/swift-5.0.2-RELEASE/swift-5.0.2-RELEASE-ubuntu16.04.tar.gz | tar xzv -C ~/swift --strip-components 2
+curl -fsS https://swift.org/builds/swift-5.0.2-release/ubuntu1604/swift-5.0.2-RELEASE/swift-5.0.2-RELEASE-ubuntu16.04.tar.gz | tar xz -C ~/swift --strip-components 2
 echo 'export PATH=$PATH:$HOME/swift/bin' >> ~/.bash_profile
+
+# Install pony
+ponyup update ponyc release
