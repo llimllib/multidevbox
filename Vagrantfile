@@ -4,7 +4,8 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "multidev.box"
 
-  # Uncomment this line if you need to re-run the user provisioning script
-  # without re-building the box.
+  # Uncomment either of these lines if you want to re-run the a provisioning
+  # script without rebuilding the box, then run `vagrant up --provision`
+  # config.vm.provision "shell", path: "provision.sh"
   # config.vm.provision "shell", path: "user_provision.sh", privileged: false
 end
