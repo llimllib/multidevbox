@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Everything in this file is run as the vagrant user, while the `provision.sh` script
 # is run as superuser. In the normal build process this is run by packer. It
 # can also be run via the Vagrantfile with `vagrant provision`
@@ -18,12 +19,20 @@ function download_java {
     if [[ ! -e "$filename" ]]; then
         curl -OsSf "$url"
         tar -xzf "$filename"
+        rm "$filename"
     fi
 }
 
 download_java "https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_linux-x64_bin.tar.gz"
 download_java "https://download.java.net/java/GA/jdk12.0.2/e482c34c86bd4bf8b56c0b35558996b9/10/GPL/openjdk-12.0.2_linux-x64_bin.tar.gz"
 download_java "https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz"
+
+# install maven into ~/maven/
+# https://maven.apache.org/install.html
+mkdir ~/maven/
+curl "https://apache.cs.utah.edu/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz" | \
+    tar xz --strip-components=1 -C ~/maven
+echo 'export PATH="~/maven/bin:$PATH"' >> ~/.bash_profile
 
 # Create GOPATH and add GO root and ~/go/bin to the $PATH for ease of using `go get ...`
 mkdir -p ~/go
@@ -64,6 +73,10 @@ curl --proto '=https' --tlsv1.2 -qsSf https://raw.githubusercontent.com/ponylang
 echo 'source ~/.bashrc' >> ~/.bash_profile
 source ~/.bash_profile
 
+# enable the export of JAVA_HOME
+jenv enable-plugin export
+
+# tell jenv what java versions we've added
 find . -wholename "**/bin/java" | \
     while read -r java_bin; do
         jdk_dir="${java_bin%*/bin/java}"
