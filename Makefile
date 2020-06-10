@@ -8,8 +8,8 @@ clean:
 	-vagrant box remove -f multidev.box
 
 .PHONY: publish 
-publish: multidev.box
-	# now upload the box to vagrant cloud
+publish:
+	# upload the box to vagrant cloud
 	vagrant cloud box show llimllib/multidev
 	read -p "New version number: " version; \
 	vagrant cloud publish --force --release llimllib/multidev $$version virtualbox multidev.box
