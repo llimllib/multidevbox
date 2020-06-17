@@ -69,5 +69,5 @@ curl -sSf https://dl.google.com/go/go1.14.linux-amd64.tar.gz | tar -C /usr/local
 curl -sSfL https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein -o /usr/bin/lein
 chmod a+x /usr/bin/lein
 
-# install docker for noclist server
+# install docker
 snap install docker
