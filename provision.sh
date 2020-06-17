@@ -68,3 +68,6 @@ curl -sSf https://dl.google.com/go/go1.14.linux-amd64.tar.gz | tar -C /usr/local
 # install leiningen for clojure
 curl -sSfL https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein -o /usr/bin/lein
 chmod a+x /usr/bin/lein
+
+# install docker for noclist server
+snap install docker
