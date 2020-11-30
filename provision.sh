@@ -20,14 +20,15 @@ curl -sSf https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb -o 
   && rm erlang-solutions_1.0_all.deb
 
 # dotnet instructions modified from
-# https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial
-curl -sSf https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -o packages-microsoft-prod.deb \
-  && dpkg -i packages-microsoft-prod.deb \
-  && rm packages-microsoft-prod.deb
+# https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#1804
+curl -sSf https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -o packages-microsoft-prod.deb && \
+  dpkg -i packages-microsoft-prod.deb && \
+  rm packages-microsoft-prod.deb
 
 apt-get update
 
 apt-get install -y \
+  aspnetcore-runtime-5.0 \
   bash-completion \
   build-essential \
   xz-utils \
@@ -37,11 +38,13 @@ apt-get install -y \
   clang \
   dotnet-sdk-2.2 \
   dotnet-sdk-3.1 \
+  dotnet-sdk-5.0 \
   elixir \
   esl-erlang \
   git \
   gnat \
   libbz2-dev \
+  liblzma-dev \
   libncurses5-dev \
   libncursesw5-dev \
   libreadline-dev \
@@ -63,7 +66,7 @@ apt-get install --no-install-recommends -y php7.3 php7.3-mbstring
 apt-get install -y --no-install-recommends yarn
 
 # download and install go 1.14 to /usr/local/go
-curl -sSf https://dl.google.com/go/go1.14.linux-amd64.tar.gz | tar -C /usr/local -xz
+curl -sSf https://dl.google.com/go/go1.15.5.linux-amd64.tar.gz | tar -C /usr/local -xz
 
 # install leiningen for clojure
 curl -sSfL https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein -o /usr/bin/lein

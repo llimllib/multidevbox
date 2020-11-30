@@ -39,7 +39,7 @@ mkdir -p ~/go
 echo 'export GOPATH="$HOME/go"' >> ~/.bash_profile
 echo 'export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"' >> ~/.bash_profile
 
-# Use pyenv to install python 3.6.4. The apt-based solutions I tried really stunk.
+# Use pyenv to install python 3.9 The apt-based solutions I tried really stunk.
 test -d ~/.pyenv && rm -rf ~/.pyenv
 curl -fsSL https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 echo 'export PATH="$HOME/.pyenv/bin:$HOME/.local/bin:$PATH"' >> ~/.bash_profile
@@ -88,15 +88,15 @@ jenv global 13
 lein
 
 # then finally install some versions
-pyenv install 3.8.2
+pyenv install 3.9.0
 pyenv install 2.7.16
-nodenv install 12.7.0
-rbenv install 2.6.3
+nodenv install 14.15.1
+rbenv install 2.7.2
 
-pyenv global 3.8.2
+pyenv global 3.9.0
 pip3 install --user pipenv
-nodenv global 12.7.0
-rbenv global 2.6.3
+nodenv global 14.15.1
+rbenv global 2.7.2
 
 # verify that ruby is installed properly and install bundler
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
@@ -107,7 +107,7 @@ curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 # Install swift to ~/swift
 mkdir ~/swift
-curl -fsS https://swift.org/builds/swift-5.0.2-release/ubuntu1604/swift-5.0.2-RELEASE/swift-5.0.2-RELEASE-ubuntu16.04.tar.gz | tar xz -C ~/swift --strip-components 2
+curl -fsS https://swift.org/builds/swift-5.2.5-release/ubuntu1604/swift-5.2.5-RELEASE/swift-5.2.5-RELEASE-ubuntu16.04.tar.gz | tar xz -C ~/swift --strip-components 2
 echo 'export PATH=$PATH:$HOME/swift/bin' >> ~/.bash_profile
 
 # Install pony

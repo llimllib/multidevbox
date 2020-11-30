@@ -44,18 +44,19 @@ You don't need to to do this just to use it! See above.
   * clojure
   * dotnet 2.2
   * dotnet 3.1
+  * dotnet 5.0
   * elixir 1.10.2
   * erlang 22
-  * golang 1.14
+  * golang 1.15.5
   * java 11.0.2 (openjdk)
   * java 12.0.2 (openjdk)
   * java 13.0.1 (openjdk)
-  * node 12.7.0
+  * node 14.15.1
   * php 7.3
   * pony 0.33
   * python 2.7.16
-  * python 3.8.2
-  * ruby 2.6.3
+  * python 3.9.0
+  * ruby 2.7.2
   * rust 1.42.0
   * swift 5.0.2
 
