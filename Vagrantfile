@@ -2,7 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "multidev.box"
+  # https://github.com/llimllib/multidevbox
+  config.vm.box = "llimllib/multidev"
 
   # Uncomment either of these lines if you want to re-run the a provisioning
   # script without rebuilding the box, then run `vagrant up --provision`
