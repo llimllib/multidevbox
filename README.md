@@ -7,15 +7,6 @@ environments.
 ## How to use it
 
 * install [Vagrant](https://www.vagrantup.com/)
-* Create a file called `Vagrantfile` with these contents:
-
-```
-Vagrant.configure("2") do |config|
-  # https://github.com/llimllib/multidevbox
-  config.vm.box = "llimllib/multidev"
-end
-```
-
 * run `vagrant up`
 * run `vagrant ssh` to ssh into your newly created box. That's it!
 
