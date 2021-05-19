@@ -71,3 +71,6 @@ curl -sSf https://dl.google.com/go/go1.15.5.linux-amd64.tar.gz | tar -C /usr/loc
 # install leiningen for clojure
 curl -sSfL https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein -o /usr/bin/lein
 chmod a+x /usr/bin/lein
+
+# install docker
+snap install docker
